@@ -4,14 +4,16 @@ This is shell script
 
 ## Usage
 
-```
-git clone 
+### install && run test
 
-cd 
+```
+git clone git@github.com:aumkung/bubu-cli.git
+
+cd bubu-cli
 
 ./bubu-cli
 
-<!-- more command -->
+------------- more command -------------
 
 kill-80
 
@@ -20,4 +22,8 @@ seeme-up
 monomember-up
 ```
 
+### export path into .zshrc
 
+```
+export PATH=$PATH:/home/<your-user>/bin
+```
