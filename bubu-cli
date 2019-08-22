@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "What is your command ?"
+
+read bubu_cli
+
+if [ $bubu_cli = kill-80 ] ; then
+    sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+    echo "Success killed";
+elif [ $bubu_cli = seeme-up ] ; then
+gnome-terminal --tab --title="docker-compose up" -- bash -c 'cd ~/Documents/SeemeTask/hd-compose && docker-compose up'
+gnome-terminal --tab --title="npm run watch" -- bash -c 'cd ~/Documents/SeemeTask/seeme-web && npm run watch'
+elif [ $bubu_cli = monomember-up ] ; then
+gnome-terminal --tab --title="docker-compose up" -- bash -c 'cd ~/Documents/monoid-web && docker-compose up'
+gnome-terminal --tab --title="npm run watch" -- bash -c 'cd ~/Documents/monoid-web/site && npm run watch'
+else
+    printf '\n'
+
+    echo "Nani !!!!!!!"
+
+    printf '\n'
+
+    echo "       ▒▒▒▒▒▒▒█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+       ▒▒▒▒▒▒▒█░▒▒▒▒▒▒▒▓▒▒▓▒▒▒▒▒▒▒░█
+       ▒▒▒▒▒▒▒█░▒▒▓▒▒▒▒▒▒▒▒▒▄▄▒▓▒▒░█░▄▄
+       ▒▒▄▀▀▄▄█░▒▒▒▒▒▒▓▒▒▒▒█░░▀▄▄▄▄▄▀░░█
+       ▒▒█░░░░█░▒▒▒▒▒▒▒▒▒▒▒█░░░░░░░░░░░█
+       ▒▒▒▀▀▄▄█░▒▒▒▒▓▒▒▒▓▒█░░░█▒░░░░█▒░░█
+       ▒▒▒▒▒▒▒█░▒▓▒▒▒▒▓▒▒▒█░░░░░░░▀░░░░░█
+       ▒▒▒▒▒▄▄█░▒▒▒▓▒▒▒▒▒▒▒█░░█▄▄█▄▄█░░█
+       ▒▒▒▒█░░░█▄▄▄▄▄▄▄▄▄▄█░█▄▄▄▄▄▄▄▄▄█
+       ▒▒▒▒█▄▄█░░█▄▄█░░░░░░█▄▄█░░█▄▄█"
+
+    printf '\n'
+fi
